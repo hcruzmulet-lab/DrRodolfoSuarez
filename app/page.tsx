@@ -10,6 +10,7 @@ import { Clinics } from "@/components/sections/Clinics";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Footer } from "@/components/sections/Footer";
+import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <FinalCta />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }
