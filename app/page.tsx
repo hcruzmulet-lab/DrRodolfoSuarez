@@ -7,6 +7,7 @@ import { Symptoms } from "@/components/sections/Symptoms";
 import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Clinics } from "@/components/sections/Clinics";
+import { Faq } from "@/components/sections/Faq";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Process />
       <Testimonials />
       <Clinics />
+      <Faq />
     </>
   );
 }
