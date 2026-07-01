@@ -8,20 +8,26 @@ import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Clinics } from "@/components/sections/Clinics";
 import { Faq } from "@/components/sections/Faq";
+import { FinalCta } from "@/components/sections/FinalCta";
+import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <TrustBar />
-      <About />
-      <Services />
-      <Symptoms />
-      <Process />
-      <Testimonials />
-      <Clinics />
-      <Faq />
+      <main>
+        <Hero />
+        <TrustBar />
+        <About />
+        <Services />
+        <Symptoms />
+        <Process />
+        <Testimonials />
+        <Clinics />
+        <Faq />
+        <FinalCta />
+      </main>
+      <Footer />
     </>
   );
 }
