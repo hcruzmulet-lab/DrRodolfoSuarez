@@ -1,1 +1,1 @@
-export const site = { whatsapp: "5215512345678" };
+export const site = { doctor: "Dr. Rodolfo Suárez", whatsapp: "5215512345678" };
