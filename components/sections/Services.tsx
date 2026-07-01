@@ -9,7 +9,7 @@ export function Services() {
   return (
     <Section id="servicios" className="bg-hueso">
       <div className="max-w-2xl">
-        <p className="text-xs uppercase tracking-widest text-dorado-600">Especialidades</p>
+        <p className="text-xs uppercase tracking-widest text-dorado-700">Especialidades</p>
         <h2 className="mt-3 font-serif text-4xl font-semibold text-azul">Cuidamos tu oído, nariz y garganta</h2>
         <p className="mt-3 text-tinta/70">Atención integral con diagnóstico preciso y tratamiento a tu medida.</p>
       </div>

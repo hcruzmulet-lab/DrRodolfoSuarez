@@ -8,6 +8,7 @@
 
   --color-dorado: #C6A15B;
   --color-dorado-600: #B08E48;
+  --color-dorado-700: #755A22;
   --color-dorado-300: #E3CE9E;
 
   --color-hueso: #F7F4EF;
@@ -17,4 +18,35 @@
 @theme inline {
   --font-serif: var(--font-serif), Georgia, serif;
   --font-sans: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Fixed navbar offset for in-page anchor links (#sobre, #servicios, ...) */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+/* Visible keyboard focus for an audience that includes older patients */
+:focus-visible {
+  outline: 2px solid var(--color-azul);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

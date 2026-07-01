@@ -6,7 +6,7 @@ export function Process() {
   return (
     <Section>
       <div className="max-w-2xl">
-        <p className="text-xs uppercase tracking-widest text-dorado-600">Cómo funciona</p>
+        <p className="text-xs uppercase tracking-widest text-dorado-700">Cómo funciona</p>
         <h2 className="mt-3 font-serif text-4xl font-semibold text-azul">Tu consulta en 4 pasos simples</h2>
       </div>
       <div className="mt-12 grid gap-8 md:grid-cols-4">

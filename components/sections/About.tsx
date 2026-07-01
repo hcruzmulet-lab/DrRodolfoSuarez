@@ -11,7 +11,7 @@ export function About() {
           <Image src={about.photo} alt={site.doctor} fill className="object-cover" sizes="(max-width:768px) 100vw, 400px" />
         </div>
         <div>
-          <p className="text-xs uppercase tracking-widest text-dorado-600">Sobre el especialista</p>
+          <p className="text-xs uppercase tracking-widest text-dorado-700">Sobre el especialista</p>
           <h2 className="mt-3 font-serif text-4xl font-semibold text-azul">{site.doctor}</h2>
           {about.paragraphs.map((p, i) => <p key={i} className="mt-4 text-tinta/75">{p}</p>)}
           <ul className="mt-6 space-y-3">

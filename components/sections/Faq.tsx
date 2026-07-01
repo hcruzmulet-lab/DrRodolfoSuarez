@@ -5,7 +5,7 @@ export function Faq() {
   return (
     <Section>
       <div className="mx-auto max-w-3xl">
-        <p className="text-center text-xs uppercase tracking-widest text-dorado-600">Preguntas frecuentes</p>
+        <p className="text-center text-xs uppercase tracking-widest text-dorado-700">Preguntas frecuentes</p>
         <h2 className="mt-3 text-center font-serif text-4xl font-semibold text-azul">Resolvemos tus dudas</h2>
         <div className="mt-10 divide-y divide-azul/10 border-y border-azul/10">
           {faqs.map((f) => (
