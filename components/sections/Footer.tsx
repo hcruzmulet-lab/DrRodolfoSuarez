@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Icon } from "@/components/ui/Icon";
 import { site } from "@/content";
+import { waLink } from "@/lib/whatsapp";
 
 export function Footer() {
   return (
@@ -19,8 +20,12 @@ export function Footer() {
         <div>
           <p className="font-medium text-white">Contacto</p>
           <ul className="mt-4 space-y-2 text-sm">
-            <li className="flex items-center gap-2"><Icon name="whatsapp" className="h-4 w-4 text-dorado" />{site.phoneDisplay}</li>
-            <li>{site.email}</li>
+            <li>
+              <a href={waLink("Hola, quiero agendar una consulta.")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-dorado">
+                <Icon name="whatsapp" className="h-4 w-4 text-dorado" />{site.phoneDisplay}
+              </a>
+            </li>
+            <li><a href={`mailto:${site.email}`} className="hover:text-dorado">{site.email}</a></li>
             <li className="flex items-start gap-2"><Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-dorado" />{site.address}</li>
           </ul>
         </div>
@@ -33,7 +38,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 py-6 text-center text-xs text-white/40">
+      <div className="border-t border-white/10 py-6 text-center text-xs text-white/55">
         © {site.doctor} — {site.specialty}. Todos los derechos reservados.
       </div>
     </footer>
