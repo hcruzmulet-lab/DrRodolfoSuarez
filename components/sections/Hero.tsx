@@ -6,22 +6,22 @@ export function Hero() {
   const wa = waLink(site.waMessage);
   return (
     <header id="top" style={{ position: "relative", overflow: "hidden", minHeight: 760, display: "flex", alignItems: "center" }}>
-      <div style={{ position: "absolute", top: "12%", right: "9%", width: 380, height: 380, zIndex: 1, background: "radial-gradient(circle,rgba(200,162,76,.18),transparent 62%)", filter: "blur(20px)", pointerEvents: "none", animation: "floaty 9s ease-in-out infinite" }} />
+      <div style={{ position: "absolute", top: "12%", right: "9%", width: 380, height: 380, zIndex: 1, background: "radial-gradient(circle,rgba(var(--gold-rgb),.18),transparent 62%)", filter: "blur(20px)", pointerEvents: "none", animation: "floaty 9s ease-in-out infinite" }} />
 
       <div data-hero-photo style={{ position: "absolute", top: "50%", right: "clamp(40px, 12vw, 250px)", transform: "translateY(-50%)", width: "clamp(300px, 33vw, 430px)", zIndex: 2 }}>
-        <div style={{ position: "relative", borderRadius: "84px 22px 84px 22px", overflow: "hidden", aspectRatio: "3 / 4", background: "#0b2545", boxShadow: "0 40px 90px rgba(0,0,0,.6)" }}>
+        <div style={{ position: "relative", borderRadius: "84px 22px 84px 22px", overflow: "hidden", aspectRatio: "3 / 4", background: "var(--panel)", boxShadow: "0 40px 90px rgba(0,0,0,.6)" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/dr-rodolfo-hero.jpg" alt="Dr. Rodolfo Suárez, otorrinolaringólogo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 14%" }} />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(14,27,44,.72) 0%, rgba(14,27,44,.12) 34%, transparent 58%)" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(6,15,26,.78) 0%, rgba(6,15,26,.14) 34%, transparent 58%)" }} />
 
           {/* Vertical hairline accent */}
-          <div style={{ position: "absolute", left: 30, bottom: 138, width: 1, height: 46, background: "linear-gradient(to bottom, transparent, rgba(200,162,76,.7))" }} />
+          <div style={{ position: "absolute", left: 30, bottom: 138, width: 1, height: 46, background: "linear-gradient(to bottom, transparent, rgba(var(--gold-rgb),.7))" }} />
 
           {/* Glass caption chip */}
           <div style={{
             position: "absolute", left: 22, right: 22, bottom: 22,
             padding: "16px 18px", borderRadius: 16,
-            background: "rgba(14,27,44,.38)", backdropFilter: "blur(9px)", WebkitBackdropFilter: "blur(9px)",
+            background: "rgba(6,15,26,.42)", backdropFilter: "blur(9px)", WebkitBackdropFilter: "blur(9px)",
             border: "1px solid rgba(255,255,255,.16)",
           }}>
             <p style={{ margin: "0 0 12px", fontSize: 13.5, lineHeight: 1.5, color: "rgba(247,243,234,.92)" }}>
@@ -37,23 +37,23 @@ export function Hero() {
 
       <div data-pad style={{ position: "relative", zIndex: 3, maxWidth: 1240, margin: "0 auto", padding: "150px 40px 80px", width: "100%" }}>
         <div data-hero style={{ maxWidth: 560 }}>
-          <span style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "7px 16px", border: "1px solid rgba(200,162,76,.4)", borderRadius: 100, fontSize: 11.5, letterSpacing: "2px", textTransform: "uppercase", color: "#e0c88a", marginBottom: 26 }}>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "7px 16px", border: "1px solid rgba(var(--gold-rgb),.4)", borderRadius: 100, fontSize: 11.5, letterSpacing: "2px", textTransform: "uppercase", color: "var(--gold-2)", marginBottom: 26 }}>
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#25d366", boxShadow: "0 0 0 0 rgba(37,211,102,.6)", animation: "ringpulse 2s infinite" }} />
             Atención el mismo día · {site.city}
           </span>
-          <h1 data-h1 style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontWeight: 600, fontSize: 74, lineHeight: 1.02, letterSpacing: "-.5px", margin: "0 0 22px", color: "#f7f3ea" }}>
+          <h1 data-h1 style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontWeight: 600, fontSize: 74, lineHeight: 1.02, letterSpacing: "-.5px", margin: "0 0 22px", color: "var(--heading)" }}>
             Escucha, respira<br />y vive{" "}
-            <em style={{ fontStyle: "italic", background: "linear-gradient(100deg,#c8a24c,#f0dca0,#c8a24c)", backgroundSize: "220% auto", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", animation: "shimmer 5s linear infinite" }}>sin límites</em>.
+            <em style={{ fontStyle: "italic", background: "linear-gradient(100deg,var(--gold),var(--gold-3),var(--gold))", backgroundSize: "220% auto", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", animation: "shimmer 5s linear infinite" }}>sin límites</em>.
           </h1>
-          <p style={{ fontSize: 17.5, lineHeight: 1.65, color: "rgba(233,237,245,.72)", maxWidth: 480, margin: "0 0 34px" }}>
-            Diagnóstico preciso y trato humano para tu <strong style={{ color: "#e9edf5", fontWeight: 600 }}>oído, nariz y garganta</strong>. Más de 18 años devolviéndoles a los pacientes de {site.city} la tranquilidad de sentirse bien.
+          <p style={{ fontSize: 17.5, lineHeight: 1.65, color: "rgba(var(--text-rgb),.72)", maxWidth: 480, margin: "0 0 34px" }}>
+            Diagnóstico preciso y trato humano para tu <strong style={{ color: "var(--text)", fontWeight: 600 }}>oído, nariz y garganta</strong>. Más de 18 años devolviéndoles a los pacientes de {site.city} la tranquilidad de sentirse bien.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 40 }}>
             <a href={wa} target="_blank" rel="noopener noreferrer" className="btn-wa" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "16px 26px", background: "#25d366", color: "#052012", borderRadius: 100, fontWeight: 700, fontSize: 15, boxShadow: "0 14px 34px rgba(37,211,102,.32)" }}>
               <WaIcon size={19} />
               Agendar por WhatsApp
             </a>
-            <a href="#servicios" className="btn-ghost" style={{ display: "inline-flex", alignItems: "center", gap: 9, padding: "16px 26px", border: "1px solid rgba(200,162,76,.42)", color: "#f5f1e8", borderRadius: 100, fontWeight: 600, fontSize: 15 }}>
+            <a href="#servicios" className="btn-ghost" style={{ display: "inline-flex", alignItems: "center", gap: 9, padding: "16px 26px", border: "1px solid rgba(var(--gold-rgb),.42)", color: "var(--text-strong)", borderRadius: 100, fontWeight: 600, fontSize: 15 }}>
               Ver servicios
               <span style={{ animation: "bob 1.6s ease-in-out infinite", display: "inline-block" }}>↓</span>
             </a>
@@ -61,12 +61,12 @@ export function Hero() {
           <div data-stats style={{ display: "flex", gap: 30, alignItems: "center" }}>
             {heroStats.map((s, i) => (
               <div key={s.label} style={{ display: "contents" }}>
-                {i > 0 && <div style={{ width: 1, height: 38, background: "rgba(200,162,76,.25)" }} />}
+                {i > 0 && <div style={{ width: 1, height: 38, background: "rgba(var(--gold-rgb),.25)" }} />}
                 <div>
-                  <div style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontSize: 34, fontWeight: 600, color: "#c8a24c", lineHeight: 1 }}>
+                  <div style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontSize: 34, fontWeight: 600, color: "var(--gold)", lineHeight: 1 }}>
                     {s.value}{s.star && <span style={{ fontSize: 18 }}>★</span>}
                   </div>
-                  <div style={{ fontSize: 12, color: "rgba(233,237,245,.6)", letterSpacing: ".4px" }}>{s.label}</div>
+                  <div style={{ fontSize: 12, color: "rgba(var(--text-rgb),.6)", letterSpacing: ".4px" }}>{s.label}</div>
                 </div>
               </div>
             ))}
