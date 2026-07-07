@@ -8,11 +8,30 @@ export function Hero() {
     <header id="top" style={{ position: "relative", overflow: "hidden", minHeight: 760, display: "flex", alignItems: "center" }}>
       <div style={{ position: "absolute", top: "12%", right: "9%", width: 380, height: 380, zIndex: 1, background: "radial-gradient(circle,rgba(200,162,76,.18),transparent 62%)", filter: "blur(20px)", pointerEvents: "none", animation: "floaty 9s ease-in-out infinite" }} />
 
-      <div data-hero-photo style={{ position: "absolute", top: "50%", right: "clamp(24px, 7vw, 150px)", transform: "translateY(-50%)", width: "clamp(300px, 31vw, 410px)", zIndex: 2 }}>
-        <div style={{ position: "absolute", inset: -12, border: "1px solid rgba(200,162,76,.32)", borderRadius: 24 }} />
-        <div style={{ position: "relative", borderRadius: 18, overflow: "hidden", aspectRatio: "4 / 5", background: "#0b2545", boxShadow: "0 34px 80px rgba(0,0,0,.6)" }}>
+      <div data-hero-photo style={{ position: "absolute", top: "50%", right: "clamp(24px, 7vw, 140px)", transform: "translateY(-50%)", width: "clamp(300px, 33vw, 430px)", zIndex: 2 }}>
+        <div style={{ position: "relative", borderRadius: "84px 22px 84px 22px", overflow: "hidden", aspectRatio: "3 / 4", background: "#0b2545", boxShadow: "0 40px 90px rgba(0,0,0,.6)" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/dr-rodolfo-hero.jpg" alt="Dr. Rodolfo Suárez, otorrinolaringólogo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 15%" }} />
+          <img src="/assets/dr-rodolfo-hero.jpg" alt="Dr. Rodolfo Suárez, otorrinolaringólogo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 14%" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(6,17,31,.72) 0%, rgba(6,17,31,.12) 34%, transparent 58%)" }} />
+
+          {/* Vertical hairline accent */}
+          <div style={{ position: "absolute", left: 30, bottom: 138, width: 1, height: 46, background: "linear-gradient(to bottom, transparent, rgba(200,162,76,.7))" }} />
+
+          {/* Glass caption chip */}
+          <div style={{
+            position: "absolute", left: 22, right: 22, bottom: 22,
+            padding: "16px 18px", borderRadius: 16,
+            background: "rgba(6,17,31,.38)", backdropFilter: "blur(9px)", WebkitBackdropFilter: "blur(9px)",
+            border: "1px solid rgba(255,255,255,.16)",
+          }}>
+            <p style={{ margin: "0 0 12px", fontSize: 13.5, lineHeight: 1.5, color: "rgba(247,243,234,.92)" }}>
+              Diagnóstico preciso y trato humano para tu oído, nariz y garganta.
+            </p>
+            <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#c8a24c" }} />
+              <span style={{ fontSize: 10.5, letterSpacing: "2px", textTransform: "uppercase", color: "#e0c88a", fontWeight: 600 }}>Atención especializada</span>
+            </div>
+          </div>
         </div>
       </div>
 
