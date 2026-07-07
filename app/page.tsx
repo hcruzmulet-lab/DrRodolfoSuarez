@@ -12,7 +12,7 @@ import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 
 export default function Home() {
   return (
-    <div style={{ position: "relative", overflowX: "clip", background: "#0e1b2c" }}>
+    <div style={{ position: "relative", overflowX: "clip", background: "var(--bg)" }}>
       <Navbar />
       <main>
         <Hero />
