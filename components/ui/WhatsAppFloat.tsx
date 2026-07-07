@@ -1,11 +1,21 @@
-import { Icon } from "./Icon";
+import { site } from "@/content";
 import { waLink } from "@/lib/whatsapp";
 
 export function WhatsAppFloat() {
+  const wa = waLink(site.waMessage);
   return (
-    <a href={waLink()} target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105">
-      <Icon name="whatsapp" className="h-7 w-7" />
+    <a
+      href={wa} target="_blank" rel="noopener noreferrer" aria-label="Agendar por WhatsApp"
+      style={{
+        position: "fixed", right: 24, bottom: 24, zIndex: 60, display: "grid", placeItems: "center",
+        width: 60, height: 60, background: "#25d366", borderRadius: "50%",
+        boxShadow: "0 12px 30px rgba(37,211,102,.45)", animation: "floaty 4s ease-in-out infinite",
+      }}
+    >
+      <span style={{ position: "absolute", inset: 0, borderRadius: "50%", border: "2px solid #25d366", animation: "ringpulse 2.2s infinite" }} />
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="#052012" aria-hidden="true">
+        <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.77-.36.19 0 .39 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.29.72 1.18 1.54 1.91 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.69-.8.87-1.08.18-.28.36-.23.6-.14.24.09 1.55.73 1.82.86.27.14.44.21.51.32.07.11.07.64-.17 1.32z" />
+      </svg>
     </a>
   );
 }
