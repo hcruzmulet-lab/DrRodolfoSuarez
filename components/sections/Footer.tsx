@@ -1,45 +1,23 @@
-import Image from "next/image";
-import { Icon } from "@/components/ui/Icon";
-import { site } from "@/content";
-import { waLink } from "@/lib/whatsapp";
+import { site, nav } from "@/content";
 
 export function Footer() {
+  const footLinks = nav.filter((n) => n.href !== "#proceso");
   return (
-    <footer id="contacto" className="bg-azul-900 text-white/80">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-3">
-        <div>
-          <div className="flex items-center gap-3">
-            <Image src="/logo-mark.png" alt="Logo" width={40} height={40} />
-            <div>
-              <p className="font-serif text-lg font-semibold text-white">{site.doctor}</p>
-              <p className="text-xs uppercase tracking-widest text-dorado">{site.specialty}</p>
-            </div>
+    <footer style={{ borderTop: "1px solid rgba(200,162,76,.16)", background: "#050d17" }}>
+      <div data-pad style={{ maxWidth: 1240, margin: "0 auto", padding: "44px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 13 }}>
+          <span style={{ display: "grid", placeItems: "center", width: 42, height: 42, border: "1.5px solid #c8a24c", borderRadius: "50%", fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontWeight: 700, fontSize: 19, color: "#c8a24c" }}>RS</span>
+          <div style={{ lineHeight: 1.2 }}>
+            <div style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontSize: 18, fontWeight: 600, color: "#f5f1e8" }}>{site.doctor}</div>
+            <div style={{ fontSize: 10.5, letterSpacing: "2px", textTransform: "uppercase", color: "#c8a24c" }}>{site.specialty} · {site.city}</div>
           </div>
-          <p className="mt-4 text-sm text-white/60">Atención especializada en oído, nariz y garganta.</p>
         </div>
-        <div>
-          <p className="font-medium text-white">Contacto</p>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li>
-              <a href={waLink("Hola, quiero agendar una consulta.")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-dorado">
-                <Icon name="whatsapp" className="h-4 w-4 text-dorado" />{site.phoneDisplay}
-              </a>
-            </li>
-            <li><a href={`mailto:${site.email}`} className="hover:text-dorado">{site.email}</a></li>
-            <li className="flex items-start gap-2"><Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-dorado" />{site.address}</li>
-          </ul>
+        <div style={{ display: "flex", gap: 26, fontSize: 13, color: "rgba(233,237,245,.6)" }}>
+          {footLinks.map((n) => (
+            <a key={n.href} href={n.href} className="foot-link">{n.label}</a>
+          ))}
         </div>
-        <div>
-          <p className="font-medium text-white">Navegación</p>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="#sobre" className="hover:text-dorado">Sobre el doctor</a></li>
-            <li><a href="#servicios" className="hover:text-dorado">Servicios</a></li>
-            <li><a href="#clinicas" className="hover:text-dorado">Clínicas</a></li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-white/10 py-6 text-center text-xs text-white/55">
-        © {site.doctor} — {site.specialty}. Todos los derechos reservados.
+        <div style={{ fontSize: 12, color: "rgba(233,237,245,.4)" }}>© 2026 · Todos los derechos reservados</div>
       </div>
     </footer>
   );

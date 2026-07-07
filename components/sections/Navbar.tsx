@@ -1,35 +1,47 @@
-"use client";
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { site } from "@/content";
-
-const links = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#clinicas", label: "Clínicas" },
-  { href: "#contacto", label: "Contacto" },
-];
+import { site, nav } from "@/content";
+import { waLink } from "@/lib/whatsapp";
+import { WaIcon } from "@/components/ui/WaIcon";
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll(); window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const wa = waLink(site.waMessage);
   return (
-    <header className={`fixed inset-x-0 top-0 z-40 transition-all ${scrolled ? "bg-hueso/90 backdrop-blur border-b border-azul/10 py-3" : "py-5"}`}>
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6">
-        <a href="#inicio" className="flex items-center gap-3">
-          <Image src="/logo-mark.png" alt="Logo Dr. Rodolfo Suárez" width={36} height={36} />
-          <span className="font-serif text-lg font-semibold text-azul">{site.doctor}</span>
-        </a>
-        <div className="hidden items-center gap-8 md:flex">
-          {links.map(l => <a key={l.href} href={l.href} className="text-sm text-tinta/70 hover:text-azul">{l.label}</a>)}
-        </div>
-        <WhatsAppButton message="Hola, quiero agendar una consulta." className="!py-2 !px-4 text-xs">Reservar</WhatsAppButton>
-      </nav>
-    </header>
+    <nav
+      data-pad
+      style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "14px 40px", background: "rgba(6,17,31,.72)",
+        backdropFilter: "blur(14px)", borderBottom: "1px solid rgba(200,162,76,.16)",
+      }}
+    >
+      <a href="#top" style={{ display: "flex", alignItems: "center", gap: 13 }}>
+        <span style={{
+          display: "grid", placeItems: "center", width: 44, height: 44,
+          border: "1.5px solid #c8a24c", borderRadius: "50%",
+          fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontWeight: 700, fontSize: 20,
+          color: "#c8a24c", letterSpacing: ".5px",
+        }}>RS</span>
+        <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.1 }}>
+          <span style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontSize: 19, fontWeight: 600, letterSpacing: ".3px", color: "#f5f1e8" }}>{site.doctor}</span>
+          <span style={{ fontSize: 10.5, letterSpacing: "2.4px", textTransform: "uppercase", color: "#c8a24c" }}>{site.specialty}</span>
+        </span>
+      </a>
+      <div data-nav-links style={{ display: "flex", alignItems: "center", gap: 34 }}>
+        {nav.map((n) => (
+          <a key={n.href} href={n.href} style={{ fontSize: 13.5, fontWeight: 500, color: "rgba(233,237,245,.8)" }}>{n.label}</a>
+        ))}
+      </div>
+      <a
+        href={wa} target="_blank" rel="noopener noreferrer" className="nav-cta"
+        style={{
+          display: "inline-flex", alignItems: "center", gap: 9, padding: "11px 20px",
+          background: "#25d366", color: "#052012", borderRadius: 100, fontWeight: 700,
+          fontSize: 13.5, boxShadow: "0 8px 24px rgba(37,211,102,.28)",
+        }}
+      >
+        <WaIcon size={17} />
+        Agendar cita
+      </a>
+    </nav>
   );
 }

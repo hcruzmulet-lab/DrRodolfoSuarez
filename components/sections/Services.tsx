@@ -1,32 +1,102 @@
-import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
-import { Icon } from "@/components/ui/Icon";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { Reveal } from "@/components/ui/Reveal";
-import { services } from "@/content";
+"use client";
+
+import { useRef } from "react";
+import { site, services } from "@/content";
+import { waLink } from "@/lib/whatsapp";
 
 export function Services() {
+  const wa = waLink(site.waMessage);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const drag = useRef({ active: false, startX: 0, scroll: 0, moved: false });
+
+  const scrollBy = (dir: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const amt = Math.min(el.clientWidth * 0.85, 700) * dir;
+    const start = el.scrollLeft;
+    const max = el.scrollWidth - el.clientWidth;
+    const target = Math.max(0, Math.min(max, start + amt));
+    const dur = 460;
+    const t0 = performance.now();
+    const ease = (p: number) => 1 - Math.pow(1 - p, 3);
+    const step = (now: number) => {
+      const p = Math.min(1, (now - t0) / dur);
+      el.scrollLeft = start + (target - start) * ease(p);
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const onDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType && e.pointerType !== "mouse") return;
+    const el = e.currentTarget;
+    drag.current = { active: true, startX: e.clientX, scroll: el.scrollLeft, moved: false };
+    el.style.cursor = "grabbing";
+  };
+  const onMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!drag.current.active) return;
+    const el = e.currentTarget;
+    const dx = e.clientX - drag.current.startX;
+    if (Math.abs(dx) > 4) drag.current.moved = true;
+    el.scrollLeft = drag.current.scroll - dx;
+  };
+  const onUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    e.currentTarget.style.cursor = "grab";
+    drag.current.active = false;
+  };
+  const onCardClick = (e: React.MouseEvent) => {
+    if (drag.current.moved) { e.preventDefault(); e.stopPropagation(); }
+  };
+
+  const arrowBtn: React.CSSProperties = {
+    display: "grid", placeItems: "center", width: 50, height: 50, borderRadius: "50%",
+    border: "1px solid rgba(200,162,76,.45)", background: "transparent", color: "#c8a24c",
+    fontSize: 22, cursor: "pointer",
+  };
+
   return (
-    <Section id="servicios" className="bg-hueso">
-      <div className="max-w-2xl">
-        <p className="text-xs uppercase tracking-widest text-dorado-700">Especialidades</p>
-        <h2 className="mt-3 font-serif text-4xl font-semibold text-azul">Cuidamos tu oído, nariz y garganta</h2>
-        <p className="mt-3 text-tinta/70">Atención integral con diagnóstico preciso y tratamiento a tu medida.</p>
+    <section id="servicios" data-pad style={{ maxWidth: 1240, margin: "0 auto", padding: "100px 40px 40px", scrollMarginTop: 90 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 30, flexWrap: "wrap", marginBottom: 44 }}>
+        <div style={{ maxWidth: 620 }}>
+          <span style={{ fontSize: 11.5, letterSpacing: "2.6px", textTransform: "uppercase", color: "#c8a24c", fontWeight: 600 }}>Especialidades</span>
+          <h2 style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontWeight: 600, fontSize: 48, lineHeight: 1.08, margin: "14px 0 0", color: "#f7f3ea" }}>Cuidado integral de oído,<br />nariz y garganta</h2>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
+          <p style={{ maxWidth: 340, fontSize: 15, lineHeight: 1.6, color: "rgba(233,237,245,.66)", margin: 0 }}>Desde un simple tapón de cera hasta cirugía endoscópica avanzada, cada tratamiento se adapta a ti. <span style={{ color: "#e0c88a", whiteSpace: "nowrap" }}>Desliza para explorar →</span></p>
+          <div style={{ display: "flex", gap: 12 }}>
+            <button onClick={() => scrollBy(-1)} aria-label="Anterior" className="icon-btn" style={arrowBtn}>‹</button>
+            <button onClick={() => scrollBy(1)} aria-label="Siguiente" className="icon-btn" style={arrowBtn}>›</button>
+          </div>
+        </div>
       </div>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((s) => (
-          <Reveal key={s.id}>
-            <Card className="flex h-full flex-col">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-dorado/30 text-dorado">
-                <Icon name={s.icon} />
-              </span>
-              <h3 className="mt-5 font-serif text-2xl font-semibold text-azul">{s.title}</h3>
-              <p className="mt-2 flex-1 text-sm text-tinta/70">{s.desc}</p>
-              <WhatsAppButton message={s.waMessage} variant="ghost" className="mt-5 self-start !py-2 !px-4 text-xs">Consultar</WhatsAppButton>
-            </Card>
-          </Reveal>
-        ))}
+
+      <div style={{ position: "relative" }}>
+        <div style={{ position: "absolute", left: -40, top: 0, bottom: 16, width: 70, zIndex: 3, pointerEvents: "none", background: "linear-gradient(90deg,#06111f,transparent)" }} />
+        <div style={{ position: "absolute", right: -40, top: 0, bottom: 16, width: 70, zIndex: 3, pointerEvents: "none", background: "linear-gradient(270deg,#06111f,transparent)" }} />
+        <div
+          ref={trackRef} data-track
+          onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerLeave={onUp}
+          style={{ display: "flex", gap: 20, overflowX: "auto", scrollSnapType: "x mandatory", padding: "10px 2px 26px", cursor: "grab", scrollbarWidth: "none" }}
+        >
+          {services.map((s) => (
+            <a
+              key={s.n} href={wa} target="_blank" rel="noopener noreferrer" onClick={onCardClick} className="svc-card"
+              style={{
+                flex: "0 0 330px", scrollSnapAlign: "start", position: "relative", display: "block",
+                padding: "34px 30px 30px", border: "1px solid rgba(200,162,76,.16)", borderRadius: 18,
+                background: "linear-gradient(160deg,rgba(11,37,69,.55),rgba(11,37,69,.1))", overflow: "hidden", userSelect: "none",
+              }}
+            >
+              <div style={{ position: "absolute", top: 2, right: 18, fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontSize: 94, fontWeight: 700, lineHeight: 1, color: "rgba(200,162,76,.09)", pointerEvents: "none" }}>{s.n}</div>
+              <div style={{ position: "relative", display: "inline-block", padding: "5px 12px", border: "1px solid rgba(200,162,76,.35)", borderRadius: 100, fontSize: 10.5, letterSpacing: "2px", textTransform: "uppercase", color: "#e0c88a", marginBottom: 58 }}>{s.tag}</div>
+              <h3 style={{ position: "relative", fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontSize: 25, fontWeight: 600, margin: "0 0 10px", color: "#f5f1e8" }}>{s.title}</h3>
+              <p style={{ position: "relative", fontSize: 14, lineHeight: 1.6, color: "rgba(233,237,245,.66)", margin: "0 0 18px" }}>{s.desc}</p>
+              <span style={{ position: "relative", fontSize: 13, fontWeight: 700, color: "#e0c88a" }}>Consultar →</span>
+              <div style={{ position: "absolute", left: 0, bottom: 0, height: 3, width: "100%", background: "linear-gradient(90deg,#c8a24c,rgba(200,162,76,0))" }} />
+            </a>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }
