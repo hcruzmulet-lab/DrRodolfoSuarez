@@ -6,13 +6,15 @@ export function Hero() {
   const wa = waLink(site.waMessage);
   return (
     <header id="top" style={{ position: "relative", overflow: "hidden", minHeight: 760, display: "flex", alignItems: "center" }}>
-      <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: "50%", zIndex: 0 }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/dr-rodolfo-hero.jpg" alt="Dr. Rodolfo Suárez, otorrinolaringólogo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 28%", transform: "scaleX(-1)" }} />
+      <div style={{ position: "absolute", top: "12%", right: "9%", width: 380, height: 380, zIndex: 1, background: "radial-gradient(circle,rgba(200,162,76,.18),transparent 62%)", filter: "blur(20px)", pointerEvents: "none", animation: "floaty 9s ease-in-out infinite" }} />
+
+      <div data-hero-photo style={{ position: "absolute", top: "50%", right: "clamp(24px, 7vw, 150px)", transform: "translateY(-50%)", width: "clamp(300px, 31vw, 410px)", zIndex: 2 }}>
+        <div style={{ position: "absolute", inset: -12, border: "1px solid rgba(200,162,76,.32)", borderRadius: 24 }} />
+        <div style={{ position: "relative", borderRadius: 18, overflow: "hidden", aspectRatio: "4 / 5", background: "#0b2545", boxShadow: "0 34px 80px rgba(0,0,0,.6)" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/dr-rodolfo-hero.jpg" alt="Dr. Rodolfo Suárez, otorrinolaringólogo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 15%" }} />
+        </div>
       </div>
-      <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(90deg,#06111f 0%,#06111f 42%,rgba(6,17,31,.82) 54%,rgba(6,17,31,.35) 72%,transparent 96%)" }} />
-      <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(to top,#06111f 2%,transparent 30%)" }} />
-      <div style={{ position: "absolute", top: "10%", right: "7%", width: 360, height: 360, zIndex: 1, background: "radial-gradient(circle,rgba(200,162,76,.16),transparent 62%)", filter: "blur(18px)", pointerEvents: "none", animation: "floaty 9s ease-in-out infinite" }} />
 
       <div data-pad style={{ position: "relative", zIndex: 3, maxWidth: 1240, margin: "0 auto", padding: "150px 40px 80px", width: "100%" }}>
         <div data-hero style={{ maxWidth: 560 }}>

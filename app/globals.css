@@ -45,6 +45,7 @@ button { cursor: pointer; }
   [data-doc] { grid-template-columns: 1fr !important; }
   [data-2col] { grid-template-columns: 1fr !important; }
   [data-nav-links] { display: none !important; }
+  [data-hero-photo] { display: none !important; }
   [data-h1] { font-size: 52px !important; }
 }
 @media (max-width:680px) {
