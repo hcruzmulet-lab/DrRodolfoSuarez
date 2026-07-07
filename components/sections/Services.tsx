@@ -62,7 +62,7 @@ export function Services() {
           <h2 style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontWeight: 600, fontSize: 48, lineHeight: 1.08, margin: "14px 0 0", color: "#f7f3ea" }}>Cuidado integral de oído,<br />nariz y garganta</h2>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start" }}>
-          <p style={{ maxWidth: 340, fontSize: 15, lineHeight: 1.6, color: "rgba(233,237,245,.66)", margin: 0 }}>Desde un simple tapón de cera hasta cirugía endoscópica avanzada, cada tratamiento se adapta a ti. <span style={{ color: "#e0c88a", whiteSpace: "nowrap" }}>Desliza para explorar →</span></p>
+          <p style={{ maxWidth: 340, fontSize: 15, lineHeight: 1.6, color: "rgba(233,237,245,.66)", margin: 0 }}>Desde un simple tapón de cera hasta cirugía avanzada, cada tratamiento se adapta a ti. <span style={{ color: "#e0c88a", whiteSpace: "nowrap" }}>Desliza para explorar →</span></p>
           <div style={{ display: "flex", gap: 12 }}>
             <button onClick={() => scrollBy(-1)} aria-label="Anterior" className="icon-btn" style={arrowBtn}>‹</button>
             <button onClick={() => scrollBy(1)} aria-label="Siguiente" className="icon-btn" style={arrowBtn}>›</button>

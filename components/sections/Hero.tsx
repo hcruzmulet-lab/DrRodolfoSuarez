@@ -8,7 +8,7 @@ export function Hero() {
     <header id="top" style={{ position: "relative", overflow: "hidden", minHeight: 760, display: "flex", alignItems: "center" }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/dr-rodolfo-hero.png" alt="Dr. Rodolfo Suárez, otorrinolaringólogo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "68% 22%" }} />
+        <img src="/assets/dr-rodolfo-hero.jpg" alt="Dr. Rodolfo Suárez, otorrinolaringólogo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "72% 18%" }} />
       </div>
       <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(100deg,#06111f 0%,#06111f 26%,rgba(6,17,31,.82) 42%,rgba(6,17,31,.4) 60%,rgba(9,20,40,.55) 100%)" }} />
       <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(to top,#06111f 1%,transparent 26%)" }} />
@@ -25,7 +25,7 @@ export function Hero() {
             <em style={{ fontStyle: "italic", background: "linear-gradient(100deg,#c8a24c,#f0dca0,#c8a24c)", backgroundSize: "220% auto", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", animation: "shimmer 5s linear infinite" }}>sin límites</em>.
           </h1>
           <p style={{ fontSize: 17.5, lineHeight: 1.65, color: "rgba(233,237,245,.72)", maxWidth: 480, margin: "0 0 34px" }}>
-            Diagnóstico preciso y trato humano para tu <strong style={{ color: "#e9edf5", fontWeight: 600 }}>oído, nariz y garganta</strong>. Más de 15 años devolviéndoles a los pacientes de {site.city} la tranquilidad de sentirse bien.
+            Diagnóstico preciso y trato humano para tu <strong style={{ color: "#e9edf5", fontWeight: 600 }}>oído, nariz y garganta</strong>. Más de 18 años devolviéndoles a los pacientes de {site.city} la tranquilidad de sentirse bien.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 40 }}>
             <a href={wa} target="_blank" rel="noopener noreferrer" className="btn-wa" style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "16px 26px", background: "#25d366", color: "#052012", borderRadius: 100, fontWeight: 700, fontSize: 15, boxShadow: "0 14px 34px rgba(37,211,102,.32)" }}>
