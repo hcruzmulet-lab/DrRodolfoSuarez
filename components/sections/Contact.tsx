@@ -5,7 +5,7 @@ import { WaIcon } from "@/components/ui/WaIcon";
 export function Contact() {
   const wa = waLink(site.waMessage);
   return (
-    <section id="contacto" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(135deg,#0b2545,#06111f)", borderTop: "1px solid rgba(200,162,76,.18)", scrollMarginTop: 70 }}>
+    <section id="contacto" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(135deg,#0b2545,#0e1b2c)", borderTop: "1px solid rgba(200,162,76,.18)", scrollMarginTop: 70 }}>
       <div style={{ position: "absolute", top: -80, right: -60, width: 420, height: 420, background: "radial-gradient(circle,rgba(200,162,76,.18),transparent 60%)", filter: "blur(20px)", animation: "floaty 10s ease-in-out infinite" }} />
       <div data-doc data-pad style={{ maxWidth: 1240, margin: "0 auto", padding: "90px 40px", position: "relative", display: "grid", gridTemplateColumns: "1.05fr .95fr", gap: 60, alignItems: "center" }}>
         <div>
@@ -18,11 +18,11 @@ export function Contact() {
           </a>
           <div style={{ marginTop: 22, fontSize: 13, color: "rgba(233,237,245,.55)" }}>o llama al <strong style={{ color: "#e0c88a" }}>{site.phoneDisplay}</strong></div>
         </div>
-        <div style={{ border: "1px solid rgba(200,162,76,.22)", borderRadius: 18, overflow: "hidden", background: "rgba(6,17,31,.5)" }}>
+        <div style={{ border: "1px solid rgba(200,162,76,.22)", borderRadius: 18, overflow: "hidden", background: "rgba(14,27,44,.5)" }}>
           <div style={{ position: "relative", height: 190, background: "#0b2545" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80" alt="Ubicación en Quito" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.75 }} />
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top,rgba(6,17,31,.85),rgba(6,17,31,.15))" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top,rgba(14,27,44,.85),rgba(14,27,44,.15))" }} />
             <div style={{ position: "absolute", left: 20, bottom: 16, display: "flex", alignItems: "center", gap: 8, color: "#f5f1e8" }}>
               <span style={{ color: "#c8a24c", fontSize: 20 }}>◈</span>
               <span style={{ fontSize: 13, fontWeight: 600 }}>La Carolina · {site.city}</span>

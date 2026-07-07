@@ -71,8 +71,8 @@ export function Services() {
       </div>
 
       <div style={{ position: "relative" }}>
-        <div style={{ position: "absolute", left: -40, top: 0, bottom: 16, width: 70, zIndex: 3, pointerEvents: "none", background: "linear-gradient(90deg,#06111f,transparent)" }} />
-        <div style={{ position: "absolute", right: -40, top: 0, bottom: 16, width: 70, zIndex: 3, pointerEvents: "none", background: "linear-gradient(270deg,#06111f,transparent)" }} />
+        <div style={{ position: "absolute", left: -40, top: 0, bottom: 16, width: 70, zIndex: 3, pointerEvents: "none", background: "linear-gradient(90deg,#0e1b2c,transparent)" }} />
+        <div style={{ position: "absolute", right: -40, top: 0, bottom: 16, width: 70, zIndex: 3, pointerEvents: "none", background: "linear-gradient(270deg,#0e1b2c,transparent)" }} />
         <div
           ref={trackRef} data-track
           onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerLeave={onUp}
