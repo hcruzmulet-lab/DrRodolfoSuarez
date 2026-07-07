@@ -25,15 +25,19 @@ export function Contact() {
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top,rgba(6,17,31,.85),rgba(6,17,31,.15))" }} />
             <div style={{ position: "absolute", left: 20, bottom: 16, display: "flex", alignItems: "center", gap: 8, color: "#f5f1e8" }}>
               <span style={{ color: "#c8a24c", fontSize: 20 }}>◈</span>
-              <span style={{ fontSize: 13, fontWeight: 600 }}>Av. Amazonas · {site.city}</span>
+              <span style={{ fontSize: 13, fontWeight: 600 }}>La Carolina · {site.city}</span>
             </div>
           </div>
           <div style={{ padding: "24px 26px", display: "flex", flexDirection: "column", gap: 16 }}>
             <div style={{ display: "flex", gap: 12 }}>
               <span style={{ color: "#c8a24c", fontSize: 17 }}>◈</span>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "#f5f1e8", marginBottom: 2 }}>Dirección</div>
-                <div style={{ fontSize: 13.5, color: "rgba(233,237,245,.68)", lineHeight: 1.5 }}>{site.address.line1}<br />{site.address.line2}</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "#f5f1e8", marginBottom: 2 }}>Ubicaciones</div>
+                {site.locations.map((loc, i) => (
+                  <div key={loc.name} style={{ fontSize: 13.5, color: "rgba(233,237,245,.68)", lineHeight: 1.5, marginTop: i > 0 ? 8 : 0 }}>
+                    <strong style={{ color: "#e0c88a", fontWeight: 600 }}>{loc.name}</strong>{loc.detail ? <> · {loc.detail}</> : null}{loc.area ? <><br />{loc.area}</> : null}
+                  </div>
+                ))}
               </div>
             </div>
             <div style={{ height: 1, background: "rgba(200,162,76,.14)" }} />
@@ -41,7 +45,7 @@ export function Contact() {
               <span style={{ color: "#c8a24c", fontSize: 17 }}>◷</span>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: "#f5f1e8", marginBottom: 2 }}>Horarios</div>
-                <div style={{ fontSize: 13.5, color: "rgba(233,237,245,.68)", lineHeight: 1.5 }}>{site.hours[0]}<br />{site.hours[1]}</div>
+                <div style={{ fontSize: 13.5, color: "rgba(233,237,245,.68)", lineHeight: 1.5 }}>{site.hours[0]}</div>
               </div>
             </div>
             <div style={{ height: 1, background: "rgba(200,162,76,.14)" }} />

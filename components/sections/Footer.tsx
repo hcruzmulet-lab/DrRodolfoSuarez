@@ -6,7 +6,8 @@ export function Footer() {
     <footer style={{ borderTop: "1px solid rgba(200,162,76,.16)", background: "#050d17" }}>
       <div data-pad style={{ maxWidth: 1240, margin: "0 auto", padding: "44px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 13 }}>
-          <span style={{ display: "grid", placeItems: "center", width: 42, height: 42, border: "1.5px solid #c8a24c", borderRadius: "50%", fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontWeight: 700, fontSize: 19, color: "#c8a24c" }}>RS</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-mark.png" alt="Logo Dr. Rodolfo Suárez" width={44} height={44} style={{ display: "block" }} />
           <div style={{ lineHeight: 1.2 }}>
             <div style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontSize: 18, fontWeight: 600, color: "#f5f1e8" }}>{site.doctor}</div>
             <div style={{ fontSize: 10.5, letterSpacing: "2px", textTransform: "uppercase", color: "#c8a24c" }}>{site.specialty} · {site.city}</div>
