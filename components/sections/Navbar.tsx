@@ -15,12 +15,8 @@ export function Navbar() {
       }}
     >
       <a href="#top" style={{ display: "flex", alignItems: "center", gap: 13 }}>
-        <span style={{
-          display: "grid", placeItems: "center", width: 44, height: 44,
-          border: "1.5px solid #c8a24c", borderRadius: "50%",
-          fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontWeight: 700, fontSize: 20,
-          color: "#c8a24c", letterSpacing: ".5px",
-        }}>RS</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-mark.png" alt="Logo Dr. Rodolfo Suárez, otorrinolaringología" width={46} height={46} style={{ display: "block" }} />
         <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.1 }}>
           <span style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontSize: 19, fontWeight: 600, letterSpacing: ".3px", color: "#f5f1e8" }}>{site.doctor}</span>
           <span style={{ fontSize: 10.5, letterSpacing: "2.4px", textTransform: "uppercase", color: "#c8a24c" }}>{site.specialty}</span>
