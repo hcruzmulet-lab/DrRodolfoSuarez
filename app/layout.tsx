@@ -17,13 +17,19 @@ const sans = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://drrodolfosuarez.com"),
   title: "Dr. Rodolfo Suárez | Otorrinolaringología en Quito",
   description:
-    "Diagnóstico preciso y trato humano para oído, nariz y garganta. +15 años de experiencia en Quito. Agenda tu cita por WhatsApp con el Dr. Rodolfo Suárez.",
+    "Diagnóstico preciso y trato humano para oído, nariz y garganta. +18 años de experiencia en Quito. Agenda tu cita por WhatsApp con el Dr. Rodolfo Suárez.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Dr. Rodolfo Suárez | Otorrinolaringología en Quito",
     description:
       "Diagnóstico preciso y trato humano para oído, nariz y garganta. Agenda tu cita por WhatsApp.",
+    url: "https://drrodolfosuarez.com",
+    siteName: "Dr. Rodolfo Suárez",
     locale: "es_EC",
     type: "website",
   },
