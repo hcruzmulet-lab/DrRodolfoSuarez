@@ -12,7 +12,7 @@ export function Hero() {
         <div style={{ position: "relative", borderRadius: "84px 22px 84px 22px", overflow: "hidden", aspectRatio: "3 / 4", background: "#0b2545", boxShadow: "0 40px 90px rgba(0,0,0,.6)" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/dr-rodolfo-hero.jpg" alt="Dr. Rodolfo Suárez, otorrinolaringólogo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 14%" }} />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(6,17,31,.72) 0%, rgba(6,17,31,.12) 34%, transparent 58%)" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(14,27,44,.72) 0%, rgba(14,27,44,.12) 34%, transparent 58%)" }} />
 
           {/* Vertical hairline accent */}
           <div style={{ position: "absolute", left: 30, bottom: 138, width: 1, height: 46, background: "linear-gradient(to bottom, transparent, rgba(200,162,76,.7))" }} />
@@ -21,7 +21,7 @@ export function Hero() {
           <div style={{
             position: "absolute", left: 22, right: 22, bottom: 22,
             padding: "16px 18px", borderRadius: 16,
-            background: "rgba(6,17,31,.38)", backdropFilter: "blur(9px)", WebkitBackdropFilter: "blur(9px)",
+            background: "rgba(14,27,44,.38)", backdropFilter: "blur(9px)", WebkitBackdropFilter: "blur(9px)",
             border: "1px solid rgba(255,255,255,.16)",
           }}>
             <p style={{ margin: "0 0 12px", fontSize: 13.5, lineHeight: 1.5, color: "rgba(247,243,234,.92)" }}>

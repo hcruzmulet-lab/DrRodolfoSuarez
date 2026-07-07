@@ -10,7 +10,7 @@ export function Navbar() {
       style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "14px 40px", background: "rgba(6,17,31,.72)",
+        padding: "14px 40px", background: "rgba(14,27,44,.72)",
         backdropFilter: "blur(14px)", borderBottom: "1px solid rgba(200,162,76,.16)",
       }}
     >

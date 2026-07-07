@@ -2,12 +2,12 @@
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body {
   margin: 0;
-  background: #06111f;
+  background: #0e1b2c;
   color: #e9edf5;
   font-family: var(--font-sans), 'Manrope', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: #c8a24c; color: #06111f; }
+::selection { background: #c8a24c; color: #0e1b2c; }
 summary { list-style: none; cursor: pointer; }
 summary::-webkit-details-marker { display: none; }
 [data-track]::-webkit-scrollbar { display: none; }
@@ -34,7 +34,7 @@ button { cursor: pointer; }
 .svc-card { transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s; }
 .svc-card:hover { transform: translateY(-8px); border-color: rgba(200,162,76,.6); box-shadow: 0 26px 54px rgba(0,0,0,.5); }
 .icon-btn { transition: background .25s, color .25s, transform .25s; }
-.icon-btn:hover { background: #c8a24c; color: #06111f; transform: translateY(-2px); }
+.icon-btn:hover { background: #c8a24c; color: #0e1b2c; transform: translateY(-2px); }
 .foot-link { transition: color .2s; }
 .foot-link:hover { color: #c8a24c; }
 .nav-cta { transition: transform .25s, box-shadow .25s; }
@@ -64,7 +64,7 @@ button { cursor: pointer; }
 .skip-link:focus {
   left: 16px; top: 16px;
   padding: 10px 20px; border-radius: 100px;
-  background: #c8a24c; color: #06111f; font-weight: 700; font-size: 14px;
+  background: #c8a24c; color: #0e1b2c; font-weight: 700; font-size: 14px;
 }
 
 @media (prefers-reduced-motion: reduce) {

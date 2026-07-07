@@ -13,7 +13,7 @@ export function Doctor() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/dr-rodolfo-retrato.jpg" alt="Dr. Rodolfo Suárez, otorrinolaringólogo" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 20%" }} />
           </div>
-          <div style={{ position: "absolute", bottom: -26, right: -20, background: "#c8a24c", color: "#06111f", borderRadius: 14, padding: "16px 20px", boxShadow: "0 20px 40px rgba(200,162,76,.3)" }}>
+          <div style={{ position: "absolute", bottom: -26, right: -20, background: "#c8a24c", color: "#0e1b2c", borderRadius: 14, padding: "16px 20px", boxShadow: "0 20px 40px rgba(200,162,76,.3)" }}>
             <div style={{ fontFamily: "var(--font-serif), 'Cormorant Garamond', serif", fontSize: 30, fontWeight: 700, lineHeight: 1 }}>18+</div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".5px", textTransform: "uppercase" }}>años cuidando pacientes</div>
           </div>

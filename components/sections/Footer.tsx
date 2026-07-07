@@ -3,7 +3,7 @@ import { site, nav } from "@/content";
 export function Footer() {
   const footLinks = nav.filter((n) => n.href !== "#proceso");
   return (
-    <footer style={{ borderTop: "1px solid rgba(200,162,76,.16)", background: "#050d17" }}>
+    <footer style={{ borderTop: "1px solid rgba(200,162,76,.16)", background: "#0a121e" }}>
       <div data-pad style={{ maxWidth: 1240, margin: "0 auto", padding: "44px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 13 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
